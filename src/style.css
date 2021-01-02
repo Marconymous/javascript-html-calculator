@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 20px;
+}
+
+.row {
+  width: 50%;
+  height: 100px;
+}
+
+.row button {
+  display: inline-block;
+  width: 24%;
+  height: 100%;
+}
+
+.rowbutton {
+  width: 50%;
+}
+
+.rowbutton button, input {
+  height: 100px;
+}
+
+input {
+
+}
