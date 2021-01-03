@@ -8,6 +8,9 @@ var currentResult = 0.0;
 var newNumber = 0.0;
 var result = 0.0;
 
+//booleans
+var equalPressed = false;
+
 
 function buttonPress(button) {
 console.log("Button pressed : " + button);
@@ -18,23 +21,28 @@ console.log("Button pressed : " + button);
       outputString = ""
       currentResultString = ""
       var operator = ''
+      equalPressed = false;
       break;
     case '/': case '*': case '+': case '-':
       operatorPressed(button);
+      equalPressed = false;
       break;
     case '=':
       newNumber = calculate();
       outputString = newNumber;
+      equalPressed = true;
       break;
     case '.':
       currentResultString += ".";
       outputString = outputString.concat(button);
       newNumber = parseFloat(currentResultString);
+      equalPressed = false;
       break;
     default:
       currentResultString += button;
       outputString = outputString.concat(button);
       newNumber = parseFloat(currentResultString);
+      equalPressed = false;
       break;
   }
   console.log("old number : " + currentResult);
@@ -49,6 +57,10 @@ function operatorPressed(newOperator) {
   newNumber = 0.0;
   currentResultString = ""
   outputString = ""
+  if (equalPressed);
+  else {
+    calculate();
+  }
 }
 
 function calculate() {
